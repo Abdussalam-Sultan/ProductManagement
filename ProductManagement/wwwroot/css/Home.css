@@ -1,0 +1,139 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    background: #1f2937;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+}
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+    }
+
+        .sidebar ul li {
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+            .sidebar ul li.active,
+            .sidebar ul li:hover {
+                background: #374151;
+            }
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header h1 {
+        font-size: 28px;
+    }
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+    .actions input {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    .actions .btn {
+        background: #2563eb;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .actions .filter,
+    .actions .sort {
+        background: #e5e7eb;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.icon {
+    width: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+    .status.in-stock {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    .status.low-stock {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+.action {
+    margin-right: 8px;
+    text-decoration: none;
+    color: #2563eb;
+    font-size: 14px;
+}
+
+    .action.delete {
+        color: #dc2626;
+    }

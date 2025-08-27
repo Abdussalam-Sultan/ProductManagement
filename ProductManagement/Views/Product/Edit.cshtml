@@ -1,0 +1,50 @@
+﻿@model Product
+
+<h1>Add Product</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" placeholder="Enter name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" placeholder="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label asp-for="Category"></label>
+        <input asp-for="Category" class="form-control" placeholder="Category" />
+        <span asp-validation-for="Category"></span>
+    </div>
+    <div>
+        <label asp-for="Price">Price - (₦)</label>
+        <input asp-for="Price" class="form-control" placeholder="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" class="form-control" placeholder="Quantity" />
+        <span asp-validation-for="Quantity"></span>
+    </div>
+    <select>
+        <option>In Stock</option>
+        <option selected>Low Stock</option>
+    </select>
+    @* <div>
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" placeholder="Date" type="date" />
+        <span asp-validation-for="Date"></span>
+    </div> *@
+    @* <div>
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" placeholder="ImageUrl" />
+        <span asp-validation-for="ImageUrl"></span>
+    </div> *@
+    <div class="row">
+        <button type="submit" class="btn btn-primary form-control">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark">Back to List</a>
+    </div>
+</form>
+

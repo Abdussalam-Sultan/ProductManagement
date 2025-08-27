@@ -1,0 +1,68 @@
+﻿@model List<Product>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Dashboard</title>
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h1>Inventory</h1>
+            <div class="actions">
+                <input type="text" placeholder="Search...">
+                <button class="filter">Filter</button>
+                <button class="sort">Sort</button>
+                <a asp-controller="Product" asp-action="Create" class="btn btn-primary"> <i class="bi bi-plus-lg"></i> Add Product</a>
+            </div>
+        </header>
+    </div>
+    @* <div class="sidebar">
+        <h2>Inventory</h2>
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Inventory</li>
+            <li>Orders</li>
+            <li>Customers</li>
+        </ul>
+    </div> *@
+
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Value</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        @* <td><img src="mouse.png" class="icon"> Wireless Mouse</td> *@
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Category</td>
+                    <td class="value">₦@product.Price</td>
+                        <td class="value">@product.Quantity</td>
+                        <td><span class="status in-stock">In Stock</span></td>
+                        <td>@product.Date</td>
+                        <td>
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id" class="action">Details</a>
+                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="action">Edit</a>
+                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="action delete">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+    
