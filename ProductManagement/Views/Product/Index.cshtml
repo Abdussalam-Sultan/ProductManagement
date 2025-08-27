@@ -51,7 +51,7 @@
                         <td>@product.Category</td>
                     <td class="value">₦@product.Price</td>
                         <td class="value">@product.Quantity</td>
-                        <td><span class="status in-stock">In Stock</span></td>
+                    <td><span class="@Helpers.ToCssClass(product.Status)">@Helpers.ToDisplayName(product.Status)</span></td>
                         <td>@product.Date</td>
                         <td>
                             <a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id" class="action">Details</a>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using ProductManagement.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductManagement.Models
@@ -13,11 +14,18 @@ namespace ProductManagement.Models
         [MaxLength(100)]
         [DisplayName("Product Description")]
         public string? Description { get; set; }
-        public DateOnly Date {  get; set; } = DateOnly.FromDateTime(DateTime.Now);
+        public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         public double Price { get; set; }
         public int Quantity { get; set; }
         public string? Category { get; set; }
-
-
+        public Status Status
+        {
+            get
+            {
+                if (Quantity > 10) return Status.InStock;
+                if (Quantity > 0 && Quantity <= 10) return Status.LowStock;
+                return Status.OutOfStock;
+            }
+        }
     }
 }

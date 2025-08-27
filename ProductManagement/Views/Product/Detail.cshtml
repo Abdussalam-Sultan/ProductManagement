@@ -7,7 +7,7 @@
     <p><strong>Category:</strong> @Model.Category</p>
     <p><strong>Price:</strong> ₦@Model.Price</p>
     <p><strong>Quantity:</strong>@Model.Quantity</p>
-    <p><strong>Status:</strong> <span class="status low-stock">Low Stock</span></p>
+    <p><strong>Status:</strong> <td><span class="@Helpers.ToCssClass(Model.Status)">@Helpers.ToDisplayName(Model.Status)</span></td></p>
     <p><strong>Date Added:</strong> @Model.Date.ToShortDateString()</p>
     @* <p><strong>Image:</strong> <img src="@Model.ImageUrl" alt="@Model.Name" /></p> *@
     <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark">Back to List</a>
