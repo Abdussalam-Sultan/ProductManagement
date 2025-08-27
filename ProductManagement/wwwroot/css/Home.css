@@ -136,8 +136,17 @@ th, td {
     text-decoration: none;
     color: #2563eb;
     font-size: 14px;
+    transition: all 0.2s ease;
 }
+    .action:hover {
+        color: #1d4ed8;
+        text-decoration: underline;
+    }
 
     .action.delete {
         color: #dc2626;
     }
+        .action.delete:hover {
+            color: #b91c1c;
+            text-decoration: underline;
+        }
